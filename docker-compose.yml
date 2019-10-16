@@ -1,0 +1,14 @@
+version: '3'
+services:
+  nginx:
+    build: nginx/
+    links: 
+      - node-app:node-app
+    ports: 
+      - "80:80"    
+  redis-server: 
+    image: 'redis:5.0.4'
+  node-app:
+    build: Node/
+    
+ 
